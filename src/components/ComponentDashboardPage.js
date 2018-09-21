@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Available from './Available'
+import InUse from './InUse'
 
 
 const ComponentDashboardPage = (props) => {
-  {console.log(props)}
   return (
   <div>
 <Available/>
+<InUse/>
   </div>
   )
 }
