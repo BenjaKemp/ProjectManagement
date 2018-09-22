@@ -7,7 +7,6 @@ const usersReducerDefaultState = [
 export default (state = usersReducerDefaultState, action) => {
   switch (action.type) {
     case 'ADD_USER':
-    console.log(action)
   return [...state, action.newUser]
     default:
       return state;

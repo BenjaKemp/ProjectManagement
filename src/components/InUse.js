@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const InUse = props => (
   <div>
-    {props.combinations.map(combo => {
+    {props.combinations.map((combo, index) => {
       let name = props.users.find(el => {
         return el.id == combo.userId;
       });
@@ -19,6 +19,7 @@ const InUse = props => (
           role={role}
           project={project}
           combo={combo}
+          index={index}
           key={combo.userId}
           />
 

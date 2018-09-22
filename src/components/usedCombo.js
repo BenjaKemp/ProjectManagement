@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const UsedCombo = props => {
-  console.log(props);
+const UsedCombo = (props) => {
+  console.log(props)
   return (
-    <div>
-      <h3>hello</h3>
-      {props.name.name}
-      {props.role.name}
-      {props.project.name}
-    </div>
-  );
-};
+  <div>
+    <Link to={`/edit/${props.index}`}>
+<p>{props.name.name} has the role of {props.role.name} on the {props.project.name}</p>
+    </Link>
+
+  </div>
+  )
+}
 
 export default UsedCombo;
