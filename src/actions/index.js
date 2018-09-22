@@ -13,9 +13,9 @@ export const addCombo = (
   }
 });
 
-export const addUser = ({id, user}) =>({
+export const addUser = ({id, name}) =>({
   type: 'ADD_USER',
   newUser: {id,
-  user
+  name
   }
 })

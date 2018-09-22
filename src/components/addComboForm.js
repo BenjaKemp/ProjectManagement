@@ -6,9 +6,9 @@ class AddComboForm extends React.Component {
     super(props);
 
     this.state = {
-      userId: 1,
-      roleId: 1,
-      projectId: 1
+      userId: null,
+      roleId: null,
+      projectId: null
     };
   }
   onUserChange = e => {
@@ -33,18 +33,20 @@ class AddComboForm extends React.Component {
       });
   };
   render() {
-    console.log(this.props)
     const state = this.state;
     const userkeys = this.props.combinations.map(a => a.userId);
-    const projectKeys = this.props.combinations.map(a => a.userId);
-    const roleKeys = this.props.combinations.map(a => a.userId);
+    const projectKeys = this.props.combinations.map(a => a.projectId);
+    const roleKeys = this.props.combinations.map(a => a.roleId);
 
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <select name="User" onChange={this.onUserChange}>
+          <select name="User" onChange={this.onUserChange} required>
+            <option>
+              select a user
+            </option>
             {this.props.stateUsers.map(user => {
-              if(!userkeys.includes(user.id)){
+              if(!userkeys.includes(user.id.toString())){
               return (
                 <option key={user.id} value={user.id}>
                   {user.name}
@@ -53,8 +55,12 @@ class AddComboForm extends React.Component {
             })}
           </select>
           <select name="Role" onChange={this.onRoleChange}>
+            <option>
+              select a role
+            </option>
             {this.props.stateRole.map(role => {
-                if(!roleKeys.includes(role.id)){
+
+                if(!roleKeys.includes(role.id.toString())){
               return (
                 <option key={role.id} value={role.id}>
                   {role.name}
@@ -62,9 +68,12 @@ class AddComboForm extends React.Component {
               )};
             })}
           </select>
-          <select name="Projects" value={state.projectId} onChange={this.onProjectChange}>
+          <select name="Projects" onChange={this.onProjectChange}>
+            <option>
+              select a project
+            </option>
             {this.props.stateProjects.map(project => {
-                if(!projectKeys.includes(project.id)){
+                if(!projectKeys.includes(project.id.toString())){
               return (
                 <option key={project.id} value={project.id}>
                   {project.name}
