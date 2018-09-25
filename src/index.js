@@ -4,6 +4,8 @@ import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import store from "./store/configureStore";
 import {addUser} from './actions'
+import './styles/styles.scss'
+import 'normalize.css'
 
 
 const state = store.getState();

@@ -6,14 +6,15 @@ import {editCombo, deleteCombo} from '../actions'
 const UsedCombo = (props) => {
   return (
   <div>
-    <button><Link to={`/edit/${props.index}`} onSubmit={(combo) => {
+    <Link to={`/edit/${props.index}`} onSubmit={(combo) => {
         props.history.push('/');
         props.dispatch(editCombo(combo));
       }}>
-    </Link>edit</button>
+      <button>
+      edit</button>
+    </Link>
 <p>{props.name.name} has the role of {props.role.name} on the {props.project.name}</p>
 <button onClick={()=>{
-    console.log(props)
   props.dispatch(deleteCombo(props.index))}
 }>delete</button>
   </div>

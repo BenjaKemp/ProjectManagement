@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 import {editCombo, deleteCombo} from '../actions'
 
 class EditComponent extends React.Component {
@@ -82,6 +83,10 @@ class EditComponent extends React.Component {
           </select>
 
           <button type="submit">Edit Combo</button>
+            <Link to='/'>
+              <button>
+              back</button>
+            </Link>
         </form>
       </div>
     );
