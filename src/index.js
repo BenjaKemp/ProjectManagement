@@ -11,7 +11,6 @@ store.dispatch(addUser({ id: 4, name: "Benji" }));
 store.dispatch(addUser({ id: 5, name: "Charlie" }));
 store.dispatch(addUser({ id: 6, name: "Buddy" }));
 store.subscribe(()=>{
-  console.log('state on change', state)
 })
 
 ReactDOM.render(

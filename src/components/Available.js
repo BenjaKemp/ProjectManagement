@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Available = props => {
+
   const userkeys = props.combinations.map(a => a.userId);
   const projectKeys = props.combinations.map(a => a.projectId);
   const roleKeys = props.combinations.map(a => a.roleId);
-
   return (
     <div>
       <h2>This is whats available</h2>

@@ -1,16 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from "react-redux";
+import {editCombo, deleteCombo} from '../actions'
 
 const UsedCombo = (props) => {
-  console.log(props)
   return (
   <div>
-    <Link to={`/edit/${props.index}`}>
+    <button><Link to={`/edit/${props.index}`} onSubmit={(combo) => {
+        props.history.push('/');
+        props.dispatch(editCombo(combo));
+      }}>
+    </Link>edit</button>
 <p>{props.name.name} has the role of {props.role.name} on the {props.project.name}</p>
-    </Link>
-
+<button onClick={()=>{
+    console.log(props)
+  props.dispatch(deleteCombo(props.index))}
+}>delete</button>
   </div>
   )
 }
 
-export default UsedCombo;
+export default connect()(UsedCombo);
