@@ -30,7 +30,6 @@ const InUse = props => (
 );
 
 const mapStateToProps = (state, props) => {
-  console.log(state);
   return {
     users: state.users,
     roles: state.roles,

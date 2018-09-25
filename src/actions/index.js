@@ -19,3 +19,23 @@ export const addUser = ({id, name}) =>({
   name
   }
 })
+
+export const editCombo = ({
+   userId,
+  roleId,
+  projectId,
+  index
+}) => ({
+  type: 'EDIT_COMBO',
+  combo: {
+  userId,
+  roleId,
+  projectId,
+},
+  index,
+})
+
+export const deleteCombo = (index) => ({
+  type: 'DELETE_COMBO',
+  index
+})
