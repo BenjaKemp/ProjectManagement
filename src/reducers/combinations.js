@@ -14,9 +14,6 @@ const combinationsReducer = (state = combinationsReducerDefaultState, action) =>
   } );
   case 'DELETE_COMBO':
   return state.filter((el, i)=>{
-    console.log('inside delete', el)
-    console.log('inside delete', i)
-    console.log('inside delete', action.index)
     return i !== action.index;
   })
     default:
